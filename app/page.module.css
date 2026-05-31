@@ -1,0 +1,280 @@
+/* app/page.module.css */
+
+.main {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+}
+
+.wrapper {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── HEADER ──────────────────────────────────── */
+.header {
+  padding: 3.5rem 0 2.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.headerTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.nameBlock h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.name em {
+  color: var(--accent);
+}
+
+.role {
+  font-size: 0.875rem;
+  color: var(--text2);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+  font-weight: 400;
+}
+
+.headerLinks {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.25rem;
+}
+
+.linkPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--border2);
+  border-radius: 999px;
+  font-size: 0.775rem;
+  color: var(--text2);
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.linkPill:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.tagline {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: var(--text2);
+  max-width: 520px;
+  line-height: 1.8;
+}
+
+/* ── SECTIONS ────────────────────────────────── */
+.section {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.section:last-of-type {
+  border-bottom: none;
+}
+
+.sectionLabel {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text3);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  font-family: 'DM Mono', monospace;
+}
+
+/* ── EDUCATION ───────────────────────────────── */
+.eduRow {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.eduSchool {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.eduDegree {
+  font-size: 0.85rem;
+  color: var(--text2);
+  margin-top: 0.2rem;
+}
+
+.eduDate {
+  font-size: 0.775rem;
+  color: var(--text3);
+  font-family: 'DM Mono', monospace;
+  white-space: nowrap;
+}
+
+/* ── EXPERIENCE ──────────────────────────────── */
+.expItem {
+  margin-bottom: 1.5rem;
+}
+
+.expItem:last-child {
+  margin-bottom: 0;
+}
+
+.expHeader {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+
+.expTitle {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.expCompany {
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 400;
+}
+
+.expDate {
+  font-size: 0.775rem;
+  color: var(--text3);
+  font-family: 'DM Mono', monospace;
+  white-space: nowrap;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.6rem;
+}
+
+.tag {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid var(--border2);
+  border-radius: 4px;
+  color: var(--text3);
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 0.02em;
+}
+
+/* ── SKILLS ──────────────────────────────────── */
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 0.75rem;
+}
+
+.skillGroup {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+}
+
+.skillGroupTitle {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-family: 'DM Mono', monospace;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.skillList {
+  font-size: 0.8rem;
+  color: var(--text2);
+  line-height: 1.9;
+}
+
+/* ── PROJECTS ────────────────────────────────── */
+.projectItem {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.1rem 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.projectItem:last-child {
+  margin-bottom: 0;
+}
+
+.projectName {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+}
+
+.projectDesc {
+  font-size: 0.82rem;
+  color: var(--text2);
+  line-height: 1.7;
+  margin-bottom: 0.6rem;
+}
+
+.projectStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.stackTag {
+  font-size: 0.68rem;
+  padding: 0.15rem 0.5rem;
+  background: var(--accent-dim);
+  color: var(--accent2);
+  border-radius: 4px;
+  font-family: 'DM Mono', monospace;
+}
+
+/* ── FOOTER ──────────────────────────────────── */
+.footer {
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text3);
+  position: relative;
+  z-index: 1;
+}
+
+/* ── RESPONSIVE ──────────────────────────────── */
+@media (max-width: 500px) {
+  .header {
+    padding: 2rem 0 1.5rem;
+  }
+
+  .skillsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
