@@ -13,7 +13,7 @@ aura-portfolio/
 ├── app/
 │   ├── api/
 │   │   └── chat/
-│   │       └── route.ts        ← LangChain + Anthropic, server-only
+│   │       └── route.ts        ← LangChain + Groq, server-only
 │   ├── globals.css
 │   ├── layout.tsx
 │   ├── page.module.css
@@ -72,7 +72,7 @@ Browser (user types)
       ↓
 POST /api/chat   (Next.js API route — server only)
       ↓
-LangChain ChatAnthropic
+LangChain 
   + AURA_SYSTEM_PROMPT from lib/knowledge.ts
       ↓
 Groq API 
@@ -81,7 +81,7 @@ Reply sent back to browser
 ```
 
 - `lib/knowledge.ts` is **never bundled into the browser** — it's server-side only
-- The API key is read from `process.env.ANTHROPIC_API_KEY` — also server-side only
+- The API key is read from `process.env.GROQ_API_KEY` — also server-side only
 - Conversation history is kept in React state on the client and sent with each request
 
 ---
