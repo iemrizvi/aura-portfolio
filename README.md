@@ -1,8 +1,8 @@
 # AURA Portfolio — Sakina Rizvi
 
-A Next.js portfolio website with **AURA**, an AI assistant powered by LangChain + Anthropic Claude.
+A Next.js portfolio website with **AURA**, an AI assistant powered by LangChain + Groq.
 
-The API key lives in a `.env.local` file on your machine (or in Netlify environment variables) and is **never exposed to the browser**. All AI calls go through a Next.js API route.
+The API key lives in a `.env.local` file on your machine  and is **never exposed to the browser**. All AI calls go through a Next.js API route.
 
 ---
 
@@ -51,10 +51,9 @@ cp .env.example .env.local
 Then open `.env.local` and replace the placeholder:
 
 ```
-ANTHROPIC_API_KEY=sk-ant-your-actual-key-here
+GROQ_API_KEY = your-groq-key-here
 ```
 
-Get your key from: https://console.anthropic.com/
 
 ### 3. Run the dev server
 
@@ -63,35 +62,6 @@ npm run dev
 ```
 
 Open http://localhost:3000 — the portfolio loads with the AURA chat button in the bottom-right corner.
-
----
-
-## Deploying to Netlify
-
-### Option A — Drag & Drop (quick)
-
-1. Run `npm run build` locally
-2. Drag the `.next` folder into Netlify — **this won't work** for Next.js server routes.
-   Use Option B instead.
-
-### Option B — Netlify Git Deploy (recommended)
-
-1. Push this project to a GitHub repository (`.env.local` is in `.gitignore` so it won't be included)
-
-2. Go to [netlify.com](https://netlify.com) → **Add new site** → **Import from Git**
-
-3. Connect your GitHub repo
-
-4. Netlify auto-detects Next.js. Build settings should be:
-   - **Build command:** `npm run build`
-   - **Publish directory:** `.next`
-
-5. Go to **Site settings → Environment variables** and add:
-   ```
-   ANTHROPIC_API_KEY = sk-ant-your-key-here
-   ```
-
-6. Deploy — done. AURA will work on the live site because the API key is injected at build/runtime by Netlify.
 
 ---
 
@@ -105,7 +75,7 @@ POST /api/chat   (Next.js API route — server only)
 LangChain ChatAnthropic
   + AURA_SYSTEM_PROMPT from lib/knowledge.ts
       ↓
-Anthropic API (claude-sonnet-4-20250514)
+Groq API 
       ↓
 Reply sent back to browser
 ```
@@ -116,12 +86,3 @@ Reply sent back to browser
 
 ---
 
-## Adding Social Media Links
-
-Open `app/page.tsx` and find the `headerLinks` section. Add more `<a>` tags following the same pattern as the GitHub and LinkedIn links.
-
----
-
-## Customizing AURA
-
-To update what AURA knows, edit `lib/knowledge.ts`. It's a plain TypeScript string — just edit the text. Redeploy after changes.
